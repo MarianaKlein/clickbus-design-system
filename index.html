@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClickBus — Design System Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cb-purple:    #A528FF;
+    --cb-white:     #FFFFFF;
+    --cb-yellow:    #FFC800;
+    --cb-coral:     #FF5A4B;
+    --cb-blue-lt:   #91B4FF;
+    --cb-purple-md: #B464FF;
+    --cb-purple-dk: #6E007D;
+    --cb-black:     #1A1A1A;
+    --cb-gray:      #6E6E6E;
+    --cb-gray-lt:   #F5F5F5;
+    --font: 'Poppins', sans-serif;
+  }
+  body { font-family: var(--font); color: var(--cb-black); background: #fafafa; }
+
+  /* LAYOUT */
+  header { background: var(--cb-purple); padding: 20px 48px; display: flex; align-items: center; gap: 16px; }
+  header h1 { font-size: 13px; font-weight: 600; color: #fff; letter-spacing: 0.08em; text-transform: uppercase; }
+  header .badge { background: var(--cb-yellow); color: var(--cb-black); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+  nav { background: var(--cb-black); padding: 0 48px; display: flex; gap: 0; overflow-x: auto; }
+  nav a { color: #999; font-size: 12px; font-weight: 500; padding: 14px 18px; text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
+  nav a:hover, nav a.active { color: var(--cb-yellow); border-bottom-color: var(--cb-yellow); }
+  main { max-width: 1200px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* SECTION */
+  .section { margin-bottom: 64px; }
+  .section-title { font-size: 22px; font-weight: 700; color: var(--cb-black); margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
+  .section-title::after { content: ''; flex: 1; height: 2px; background: var(--cb-purple); opacity: 0.15; }
+  .section-desc { font-size: 14px; color: var(--cb-gray); margin-bottom: 28px; max-width: 680px; line-height: 1.7; }
+
+  /* COLOR PALETTE */
+  .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+  .color-card { border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); background: #fff; }
+  .color-swatch { height: 100px; }
+  .color-info { padding: 14px 16px; }
+  .color-name { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .color-hex { font-size: 16px; font-weight: 800; font-family: monospace; margin-bottom: 4px; }
+  .color-codes { font-size: 10px; color: var(--cb-gray); line-height: 1.7; }
+  .color-tag { display: inline-block; background: var(--cb-gray-lt); border-radius: 4px; padding: 2px 6px; font-size: 10px; margin-top: 6px; color: var(--cb-black); font-weight: 600; }
+  .color-tag.primary { background: var(--cb-purple); color: #fff; }
+  .color-tag.accent { background: var(--cb-yellow); color: var(--cb-black); }
+
+  /* TYPOGRAPHY */
+  .type-scale { display: flex; flex-direction: column; gap: 20px; }
+  .type-row { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 20px 24px; display: flex; align-items: baseline; gap: 24px; }
+  .type-meta { min-width: 160px; }
+  .type-meta .label { font-size: 11px; font-weight: 700; color: var(--cb-purple); text-transform: uppercase; letter-spacing: 0.06em; }
+  .type-meta .specs { font-size: 11px; color: var(--cb-gray); margin-top: 4px; line-height: 1.6; }
+  .type-sample { font-family: var(--font); }
+
+  /* LOGO */
+  .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+  .logo-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden; }
+  .logo-preview { height: 140px; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .logo-preview.bg-purple { background: var(--cb-purple); }
+  .logo-preview.bg-black { background: var(--cb-black); }
+  .logo-preview.bg-white { background: #fff; border-bottom: 1px solid #eee; }
+  .logo-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 16px 4px; color: var(--cb-purple); }
+  .logo-desc { font-size: 12px; color: var(--cb-gray); padding: 0 16px 16px; line-height: 1.6; }
+  .logo-text { font-family: var(--font); font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; line-height: 1; }
+  .logo-symbol { width: 50px; height: 50px; background: var(--cb-purple); border-radius: 0 0 50% 50%; }
+
+  /* ICONS */
+  .icon-rules { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .rule-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 20px 24px; }
+  .rule-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+  .rule-card ul { list-style: none; font-size: 13px; color: var(--cb-gray); line-height: 1.8; }
+  .rule-card ul li::before { content: '→ '; color: var(--cb-purple); font-weight: 700; }
+  .rule-card.dont ul li::before { content: '✗ '; color: #FF5A4B; }
+
+  /* SHAPES */
+  .shape-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .shape-card { background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 24px; text-align: center; }
+  .shape-preview { margin: 0 auto 16px; }
+  .shape-name { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .shape-desc { font-size: 12px; color: var(--cb-gray); line-height: 1.6; }
+
+  /* VOICE */
+  .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .voice-card { border-radius: 12px; padding: 24px; border: 1px solid rgba(0,0,0,0.06); background: #fff; }
+  .voice-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 6px; color: var(--cb-purple); }
+  .voice-card .sub { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; color: var(--cb-gray); margin-bottom: 14px; }
+  .voice-card .pode { margin-bottom: 12px; }
+  .voice-card .pode strong, .voice-card .nao-pode strong { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+  .voice-card .pode strong { color: #22c55e; }
+  .voice-card .nao-pode strong { color: #FF5A4B; }
+  .voice-card ul { list-style: none; font-size: 12px; color: var(--cb-gray); line-height: 1.8; margin-top: 4px; }
+  .voice-card ul li::before { content: '· '; }
+
+  /* BEHAVIOR */
+  .behavior-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .behavior-card { border-radius: 12px; padding: 24px; display: flex; gap: 16px; border: 1px solid rgba(0,0,0,0.06); background: #fff; }
+  .behavior-number { font-size: 40px; font-weight: 900; color: var(--cb-purple); opacity: 0.15; line-height: 1; min-width: 48px; }
+  .behavior-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .behavior-card .tom { font-size: 11px; font-style: italic; color: var(--cb-purple); font-weight: 600; margin-bottom: 10px; }
+  .behavior-card ul { list-style: none; font-size: 12px; color: var(--cb-gray); line-height: 1.9; }
+  .behavior-card ul li::before { content: '→ '; color: var(--cb-purple); font-weight: 700; }
+
+  /* TOKENS TABLE */
+  .tokens-table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); }
+  .tokens-table th { background: var(--cb-black); color: #fff; padding: 12px 16px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .tokens-table td { padding: 12px 16px; border-bottom: 1px solid rgba(0,0,0,0.05); vertical-align: middle; }
+  .tokens-table tr:last-child td { border-bottom: none; }
+  .tokens-table tr:hover td { background: var(--cb-gray-lt); }
+  .swatch-sm { width: 20px; height: 20px; border-radius: 4px; display: inline-block; vertical-align: middle; border: 1px solid rgba(0,0,0,0.1); }
+  code { font-family: monospace; background: var(--cb-gray-lt); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+
+  /* ACCESSIBILITY */
+  .a11y-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .a11y-card { border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .a11y-sample { font-size: 16px; font-weight: 700; }
+  .a11y-meta { font-size: 11px; opacity: 0.8; }
+  .a11y-ok { border: 2px solid #22c55e; }
+  .a11y-ok::after { content: '✓ Acessível'; display: block; font-size: 10px; font-weight: 700; color: #22c55e; text-transform: uppercase; letter-spacing: 0.06em; }
+  .a11y-no { border: 2px solid #FF5A4B; }
+  .a11y-no::after { content: '✗ Evitar'; display: block; font-size: 10px; font-weight: 700; color: #FF5A4B; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* FOOTER */
+  footer { background: var(--cb-black); color: #666; font-size: 12px; padding: 24px 48px; text-align: center; }
+  footer strong { color: var(--cb-purple); }
+
+  /* UTIL */
+  .chip { display: inline-block; background: var(--cb-gray-lt); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 600; margin: 4px 4px 4px 0; }
+  .chip.purple { background: var(--cb-purple); color: #fff; }
+  .note { background: #FFF8E1; border-left: 3px solid var(--cb-yellow); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13px; margin-bottom: 20px; }
+  .note strong { color: var(--cb-black); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div style="font-size:22px; font-weight:900; color:#fff; letter-spacing:-0.02em; text-transform:uppercase;">CLICKBUS</div>
+  <div>
+    <h1>Design System — Referência Completa</h1>
+  </div>
+  <div class="badge">Web: Poppins</div>
+</header>
+
+<nav>
+  <a href="#cores" class="active">Cores</a>
+  <a href="#tipografia">Tipografia</a>
+  <a href="#tokens">Tokens UI</a>
+  <a href="#marca">Marca</a>
+  <a href="#icones">Iconografia</a>
+  <a href="#formas">Formas</a>
+  <a href="#grafismos">Grafismos</a>
+  <a href="#fotografia">Fotografia</a>
+  <a href="#voz">Tom de Voz</a>
+  <a href="#comportamento">Comportamento</a>
+</nav>
+
+<main>
+
+  <!-- CORES -->
+  <div class="section" id="cores">
+    <div class="section-title">Paleta Cromática</div>
+    <p class="section-desc">Balanço de tons que simboliza o equilíbrio entre seriedade e toque humano. As cores possuem direcionamentos específicos — nunca utilizar tonalidades diferentes das originais.</p>
+
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#A528FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Roxo Principal</div>
+          <div class="color-hex" style="color:#A528FF;">#A528FF</div>
+          <div class="color-codes">RGB 165 · 40 · 255<br>CMYK 62 · 87 · 0 · 0<br>Pantone 2084 C</div>
+          <span class="color-tag primary">Primária</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFC800;"></div>
+        <div class="color-info">
+          <div class="color-name">Amarelo</div>
+          <div class="color-hex" style="color:#c49a00;">#FFC800</div>
+          <div class="color-codes">RGB 255 · 200 · 0<br>CMYK 0 · 18 · 100 · 0<br>Pantone 116 C</div>
+          <span class="color-tag accent">Destaque / CTA</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#1A1A1A;"></div>
+        <div class="color-info">
+          <div class="color-name">Preto / Texto</div>
+          <div class="color-hex" style="color:#1A1A1A;">#1A1A1A</div>
+          <div class="color-codes">RGB 26 · 26 · 26<br>CMYK 65 · 55 · 55 · 82<br>Pantone 419 C</div>
+          <span class="color-tag">Texto principal</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFFFFF; border-bottom: 1px solid #eee;"></div>
+        <div class="color-info">
+          <div class="color-name">Branco</div>
+          <div class="color-hex" style="color:#999;">#FFFFFF</div>
+          <div class="color-codes">RGB 255 · 255 · 255<br>CMYK 0 · 0 · 0 · 0</div>
+          <span class="color-tag">Background / Texto s/ fundo escuro</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FF5A4B;"></div>
+        <div class="color-info">
+          <div class="color-name">Coral / Vermelho</div>
+          <div class="color-hex" style="color:#FF5A4B;">#FF5A4B</div>
+          <div class="color-codes">RGB 255 · 90 · 75<br>CMYK 0 · 83 · 79 · 0<br>Pantone 2027 C</div>
+          <span class="color-tag">Suporte</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#91B4FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Azul Claro</div>
+          <div class="color-hex" style="color:#5577cc;">#91B4FF</div>
+          <div class="color-codes">RGB 145 · 180 · 255<br>CMYK 43 · 18 · 0 · 0<br>Pantone 278 C</div>
+          <span class="color-tag">Suporte</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#B464FF;"></div>
+        <div class="color-info">
+          <div class="color-name">Roxo Médio</div>
+          <div class="color-hex" style="color:#B464FF;">#B464FF</div>
+          <div class="color-codes">RGB 180 · 100 · 255<br>CMYK 51 · 72 · 0 · 0<br>Pantone 2083 C</div>
+          <span class="color-tag">Suporte</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#6E007D;"></div>
+        <div class="color-info">
+          <div class="color-name">Roxo Escuro</div>
+          <div class="color-hex" style="color:#6E007D;">#6E007D</div>
+          <div class="color-codes">RGB 110 · 0 · 125<br>CMYK 71 · 100 · 20 · 7<br>Pantone 2613 C</div>
+          <span class="color-tag">Suporte</span>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <h3 style="font-size:14px; font-weight:700; margin-bottom:16px; color:#555;">Acessibilidade — Combinações</h3>
+    <div class="a11y-grid">
+      <div class="a11y-card a11y-ok" style="background:#A528FF; color:#fff;">
+        <div class="a11y-sample">Texto</div>
+        <div class="a11y-meta">Branco s/ Roxo</div>
+      </div>
+      <div class="a11y-card a11y-ok" style="background:#1A1A1A; color:#fff;">
+        <div class="a11y-sample">Texto</div>
+        <div class="a11y-meta">Branco s/ Preto</div>
+      </div>
+      <div class="a11y-card a11y-ok" style="background:#1A1A1A; color:#FFC800;">
+        <div class="a11y-sample">Texto</div>
+        <div class="a11y-meta">Amarelo s/ Preto</div>
+      </div>
+      <div class="a11y-card a11y-ok" style="background:#fff; color:#1A1A1A; border:1px solid #eee;">
+        <div class="a11y-sample">Texto</div>
+        <div class="a11y-meta">Preto s/ Branco</div>
+      </div>
+      <div class="a11y-card a11y-no" style="background:#A528FF; color:#6E007D;">
+        <div class="a11y-sample">Texto</div>
+        <div class="a11y-meta">Roxo Escuro s/ Roxo</div>
+      </div>
+      <div class="a11y-card a11y-no" style="background:#FFC800; color:#fff;">
+        <div class="a11y-sample">Texto</div>
+        <div class="a11y-meta">Branco s/ Amarelo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPOGRAFIA -->
+  <div class="section" id="tipografia">
+    <div class="section-title">Tipografia</div>
+    <div class="note"><strong>⚠ Adaptação Web:</strong> A fonte original do brandbook é <strong>Carbona</strong> (Plau / Adobe Fonts). Para este projeto web em Elementor, utilizamos <strong>Poppins</strong> como substituta. Mesmas regras de uso se aplicam.</div>
+    <p class="section-desc">Sem serifa, detalhes arredondados, alta legibilidade e carisma. Otimizada para interfaces digitais. Usada em caixa-alta e caixa-baixa — nunca all-caps. Alinhamento preferencial: esquerda.</p>
+
+    <div class="type-scale">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Display / Hero</div>
+          <div class="specs">Poppins Black 900<br>~56–72px · Line-height 1.05</div>
+        </div>
+        <div class="type-sample" style="font-size:52px; font-weight:900; line-height:1.05;">Viajar muda a gente</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">H1 / Título</div>
+          <div class="specs">Poppins Bold 700<br>~36–44px · Line-height 1.15</div>
+        </div>
+        <div class="type-sample" style="font-size:36px; font-weight:700; line-height:1.15;">Passagens para todo destino</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">H2 / Subtítulo</div>
+          <div class="specs">Poppins SemiBold 600<br>~24–28px · Line-height 1.3</div>
+        </div>
+        <div class="type-sample" style="font-size:24px; font-weight:600; line-height:1.3;">Compre sua passagem com um click</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">H3 / Card Title</div>
+          <div class="specs">Poppins SemiBold 600<br>~18–20px · Line-height 1.4</div>
+        </div>
+        <div class="type-sample" style="font-size:18px; font-weight:600; line-height:1.4;">Milhares de destinos para você</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Body / Corpo</div>
+          <div class="specs">Poppins Regular 400<br>~15–16px · Line-height 1.7</div>
+        </div>
+        <div class="type-sample" style="font-size:15px; font-weight:400; line-height:1.7; max-width:520px;">A ClickBus transforma sua viagem do início ao fim. Com um click você encontra passagens, compara preços e embarca sem estresse em qualquer destino do Brasil.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="label">Caption / Label</div>
+          <div class="specs">Poppins Medium 500<br>~11–12px · Line-height 1.5<br>Letter-spacing +0.04em</div>
+        </div>
+        <div class="type-sample" style="font-size:11px; font-weight:500; line-height:1.5; letter-spacing:0.04em; text-transform:uppercase;">Embarque disponível · Todas as viações</div>
+      </div>
+    </div>
+
+    <br>
+    <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:#555;">Regras de Alinhamento</h3>
+    <div class="grid-2">
+      <div class="rule-card">
+        <h4 style="color:#22c55e;">✓ Pode</h4>
+        <ul>
+          <li>Alinhamento à esquerda (padrão)</li>
+          <li>Centralizado para textos curtos/impacto</li>
+          <li>Right alignment: uso restrito e específico</li>
+        </ul>
+      </div>
+      <div class="rule-card dont">
+        <h4 style="color:#FF5A4B;">✗ Não pode</h4>
+        <ul>
+          <li>All-caps em textos corridos</li>
+          <li>Centralizar grandes volumes de texto</li>
+          <li>Centralizar informações essenciais</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOKENS UI -->
+  <div class="section" id="tokens">
+    <div class="section-title">Tokens de UI</div>
+    <p class="section-desc">Variáveis extraídas do CSS do site oficial ClickBus. Usar como referência para configurar o Elementor Pro.</p>
+    <table class="tokens-table">
+      <thead>
+        <tr><th>Token</th><th>Valor</th><th>Amostra</th><th>Uso</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>--cb-purple</code></td><td>#A528FF</td><td><span class="swatch-sm" style="background:#A528FF;"></span></td><td>Header bg, botão primário, link hover, borda ativa</td></tr>
+        <tr><td><code>--cb-yellow</code></td><td>#FFC800</td><td><span class="swatch-sm" style="background:#FFC800;"></span></td><td>Nav active, hover states, destaque, CTA</td></tr>
+        <tr><td><code>--cb-black</code></td><td>#1A1A1A</td><td><span class="swatch-sm" style="background:#1A1A1A;"></span></td><td>Texto padrão, botão hover, sidebar bg</td></tr>
+        <tr><td><code>--cb-white</code></td><td>#FFFFFF</td><td><span class="swatch-sm" style="background:#FFFFFF; border:1px solid #ddd;"></span></td><td>Background, texto sobre fundo escuro</td></tr>
+        <tr><td><code>--cb-gray</code></td><td>#6E6E6E</td><td><span class="swatch-sm" style="background:#6E6E6E;"></span></td><td>Texto secundário, bordas hover</td></tr>
+        <tr><td><code>btn-default-border</code></td><td>#A528FF</td><td></td><td>Borda botão outline padrão</td></tr>
+        <tr><td><code>btn-default-text</code></td><td>#A528FF</td><td></td><td>Texto botão outline</td></tr>
+        <tr><td><code>btn-hover-border</code></td><td>#1A1A1A</td><td></td><td>Borda botão hover</td></tr>
+        <tr><td><code>sidebar-active-border</code></td><td>#FFC800</td><td></td><td>Indicador ativo na navegação lateral</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MARCA -->
+  <div class="section" id="marca">
+    <div class="section-title">Marca / Logo</div>
+    <p class="section-desc">A versão principal é em 2 linhas. Cada variação tem contexto específico — não substituir umas pelas outras sem critério.</p>
+
+    <!-- SVG definitions reutilizáveis -->
+    <svg width="0" height="0" style="position:absolute;">
+      <defs>
+        <!-- SÍMBOLO CLICKBUS: C-curve (trajeto) + 2 circles (olhos/rodas) -->
+        <symbol id="cb-symbol-purple" viewBox="0 0 64 64">
+          <!-- Corpo do ônibus / arc C -->
+          <path d="M52 32 C52 18 43 10 32 10 C21 10 12 18 12 32 C12 46 21 54 32 54 L52 54 C52 54 52 46 52 32Z" fill="#A528FF"/>
+          <!-- Dois círculos brancos: olhos / rodas -->
+          <circle cx="26" cy="32" r="7" fill="#fff"/>
+          <circle cx="42" cy="32" r="7" fill="#fff"/>
+          <!-- Detalhe fino: pupilas (conceito olhar) -->
+          <circle cx="26" cy="32" r="3" fill="#A528FF"/>
+          <circle cx="42" cy="32" r="3" fill="#A528FF"/>
+        </symbol>
+        <symbol id="cb-symbol-white" viewBox="0 0 64 64">
+          <path d="M52 32 C52 18 43 10 32 10 C21 10 12 18 12 32 C12 46 21 54 32 54 L52 54 C52 54 52 46 52 32Z" fill="#fff"/>
+          <circle cx="26" cy="32" r="7" fill="#1A1A1A"/>
+          <circle cx="42" cy="32" r="7" fill="#1A1A1A"/>
+          <circle cx="26" cy="32" r="3" fill="#fff"/>
+          <circle cx="42" cy="32" r="3" fill="#fff"/>
+        </symbol>
+        <symbol id="cb-symbol-black" viewBox="0 0 64 64">
+          <path d="M52 32 C52 18 43 10 32 10 C21 10 12 18 12 32 C12 46 21 54 32 54 L52 54 C52 54 52 46 52 32Z" fill="#1A1A1A"/>
+          <circle cx="26" cy="32" r="7" fill="#fff"/>
+          <circle cx="42" cy="32" r="7" fill="#fff"/>
+          <circle cx="26" cy="32" r="3" fill="#1A1A1A"/>
+          <circle cx="42" cy="32" r="3" fill="#1A1A1A"/>
+        </symbol>
+        <!-- APP ICON: símbolo sobre fundo arredondado roxo -->
+        <symbol id="cb-app-icon" viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="14" fill="#A528FF"/>
+          <path d="M48 32 C48 20 40 13 32 13 C24 13 16 20 16 32 C16 44 24 51 32 51 L48 51 C48 51 48 44 48 32Z" fill="#1A1A1A"/>
+          <circle cx="27" cy="32" r="6" fill="#fff"/>
+          <circle cx="40" cy="32" r="6" fill="#fff"/>
+          <circle cx="27" cy="32" r="2.5" fill="#1A1A1A"/>
+          <circle cx="40" cy="32" r="2.5" fill="#1A1A1A"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="logo-grid">
+      <!-- Versão Principal -->
+      <div class="logo-card">
+        <div class="logo-preview bg-white" style="gap:12px; flex-direction:column; align-items:flex-start; padding:28px;">
+          <svg width="52" height="52" style="display:block;"><use href="#cb-symbol-purple"/></svg>
+          <div class="logo-text" style="font-size:30px; color:#1A1A1A; letter-spacing:-0.03em;">CLICKBUS</div>
+        </div>
+        <div class="logo-name">Versão Principal (2 linhas)</div>
+        <div class="logo-desc">Símbolo em roxo + wordmark preto. Uso padrão em fundos brancos/claros.</div>
+      </div>
+      <!-- Horizontal -->
+      <div class="logo-card">
+        <div class="logo-preview bg-purple" style="gap:14px; align-items:center;">
+          <svg width="44" height="44" style="display:block;"><use href="#cb-symbol-white"/></svg>
+          <div class="logo-text" style="font-size:26px; color:#fff; letter-spacing:-0.03em;">CLICKBUS</div>
+        </div>
+        <div class="logo-name">Horizontal (Restrita)</div>
+        <div class="logo-desc">Símbolo branco + wordmark branco. Apenas headers, faixas e banners horizontais.</div>
+      </div>
+      <!-- Negativa -->
+      <div class="logo-card">
+        <div class="logo-preview bg-black" style="gap:12px; flex-direction:column; align-items:flex-start; padding:28px;">
+          <svg width="52" height="52" style="display:block;"><use href="#cb-symbol-white"/></svg>
+          <div class="logo-text" style="font-size:30px; color:#fff; letter-spacing:-0.03em;">CLICKBUS</div>
+        </div>
+        <div class="logo-name">Negativa</div>
+        <div class="logo-desc">Símbolo branco + wordmark branco sobre fundos escuros ou fotográficos.</div>
+      </div>
+      <!-- Com Tagline -->
+      <div class="logo-card">
+        <div class="logo-preview bg-white" style="gap:10px; flex-direction:column; align-items:flex-start; padding:28px;">
+          <svg width="52" height="52" style="display:block;"><use href="#cb-symbol-purple"/></svg>
+          <div>
+            <div class="logo-text" style="font-size:30px; color:#1A1A1A; letter-spacing:-0.03em;">CLICKBUS</div>
+            <div style="font-size:8px; letter-spacing:0.18em; color:#1A1A1A; font-weight:600; margin-top:2px; text-transform:uppercase;">Viajar muda a gente</div>
+          </div>
+        </div>
+        <div class="logo-name">Marca + Tagline</div>
+        <div class="logo-desc">Com posicionamento. Usar quando o contexto exige reforço da identidade.</div>
+      </div>
+      <!-- App Icon -->
+      <div class="logo-card">
+        <div class="logo-preview bg-white" style="gap:16px; align-items:center;">
+          <svg width="72" height="72" style="display:block; border-radius:16px; overflow:visible;"><use href="#cb-app-icon"/></svg>
+          <div style="font-size:12px; color:#6E6E6E; text-align:left; line-height:1.6;">
+            <strong style="color:#1A1A1A; display:block; margin-bottom:4px;">Ícone de App</strong>
+            Símbolo sobre fundo roxo arredondado. Clearance: X/2 em todos os lados.
+          </div>
+        </div>
+        <div class="logo-name">Ícone de Aplicativo</div>
+        <div class="logo-desc">Uso em avatares, apps e favicons. Aprovação obrigatória do marketing para variações sazonais.</div>
+      </div>
+      <!-- Símbolo standalone -->
+      <div class="logo-card">
+        <div class="logo-preview bg-purple" style="gap:16px; align-items:center; justify-content:center;">
+          <svg width="80" height="80" style="display:block;"><use href="#cb-symbol-white"/></svg>
+        </div>
+        <div class="logo-name">Símbolo Isolado</div>
+        <div class="logo-desc">Apenas em contextos onde a relação com a marca ClickBus já está estabelecida (páginas internas, lojas, peças assinadas).</div>
+      </div>
+    </div>
+
+    <br>
+    <div style="background:#F5F5F5; border-radius:12px; padding:20px 24px; margin-bottom:8px;">
+      <h3 style="font-size:13px; font-weight:700; margin-bottom:12px; color:#1A1A1A;">Conceitos do Símbolo</h3>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; font-size:13px;">
+        <div><strong style="color:#A528FF; display:block; margin-bottom:4px;">👁 O Olhar</strong>Os dois círculos representam inovação e atenção — os "olhos" que observam clientes e parceiros. Em animação, os círculos internos ganham movimento.</div>
+        <div><strong style="color:#A528FF; display:block; margin-bottom:4px;">🛣 Trajeto</strong>A forma em C representa o deslocamento e a transformação entre os pontos das rotas. A curva define o caminho percorrido.</div>
+        <div><strong style="color:#A528FF; display:block; margin-bottom:4px;">🚌 Ônibus</strong>A forma completa remete ao ônibus — presente no nome e no meio pelo qual a marca leva pessoas aos seus destinos.</div>
+      </div>
+    </div>
+
+    <br>
+    <div class="grid-2">
+      <div class="rule-card">
+        <h4>Área de Arejamento</h4>
+        <ul>
+          <li>Clearance = largura do símbolo (X) em todos os lados</li>
+          <li>Ícone de app: área X/2</li>
+          <li>Válido para TODAS as versões</li>
+          <li>Nenhum elemento invade essa zona</li>
+        </ul>
+      </div>
+      <div class="rule-card dont">
+        <h4 style="color:#FF5A4B;">Usos Incorretos</h4>
+        <ul>
+          <li>Distorcer ou alterar proporções</li>
+          <li>Aplicar gradientes ou sombras</li>
+          <li>Usar cores fora da paleta</li>
+          <li>Reduzir além do tamanho mínimo</li>
+          <li>Sobrepor sem respeitar clearance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICONOGRAFIA -->
+  <div class="section" id="icones">
+    <div class="section-title">Iconografia</div>
+    <p class="section-desc">Ícones com linhas espessas coloridas e finas pretas. Inspirados na estética da marca. Podem ter protagonismo visual ou função utilitária.</p>
+
+    <!-- EXEMPLOS DE ÍCONES SVG — estilo ClickBus: stroke espesso (3mod=roxo) + stroke fino (1mod=preto) -->
+    <div style="background:#1A1A1A; border-radius:16px; padding:32px; margin-bottom:24px;">
+      <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#FFC800; margin-bottom:20px;">Exemplos de ícones — grid 28×28 / stroke espesso roxo + fino preto</div>
+      <div style="display:flex; flex-wrap:wrap; gap:32px; align-items:flex-end;">
+
+        <!-- Ônibus -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- corpo espesso roxo -->
+            <rect x="3" y="7" width="22" height="13" rx="3" stroke="#A528FF" stroke-width="3" stroke-linejoin="round"/>
+            <!-- janelas finas pretas -->
+            <rect x="6" y="10" width="4" height="3" rx="1" stroke="#1A1A1A" stroke-width="1"/>
+            <rect x="12" y="10" width="4" height="3" rx="1" stroke="#1A1A1A" stroke-width="1"/>
+            <rect x="18" y="10" width="4" height="3" rx="1" stroke="#1A1A1A" stroke-width="1"/>
+            <!-- rodas espessas roxas -->
+            <circle cx="8" cy="22" r="2.5" stroke="#A528FF" stroke-width="3"/>
+            <circle cx="20" cy="22" r="2.5" stroke="#A528FF" stroke-width="3"/>
+            <!-- detalhe porta fino -->
+            <line x1="3" y1="14" x2="25" y2="14" stroke="#1A1A1A" stroke-width="1"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Ônibus</div>
+        </div>
+
+        <!-- Localização -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- pin espesso roxo -->
+            <path d="M14 3 C10 3 7 6 7 10 C7 15 14 25 14 25 C14 25 21 15 21 10 C21 6 18 3 14 3Z" stroke="#A528FF" stroke-width="3" stroke-linejoin="round"/>
+            <!-- círculo interno fino preto -->
+            <circle cx="14" cy="10" r="3" stroke="#1A1A1A" stroke-width="1"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Destino</div>
+        </div>
+
+        <!-- Calendário / Data -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- caixa espessa roxa -->
+            <rect x="3" y="6" width="22" height="19" rx="3" stroke="#A528FF" stroke-width="3"/>
+            <!-- linha topo fina preta -->
+            <line x1="3" y1="12" x2="25" y2="12" stroke="#1A1A1A" stroke-width="1"/>
+            <!-- ganchos finos pretos -->
+            <line x1="9" y1="3" x2="9" y2="9" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+            <line x1="19" y1="3" x2="19" y2="9" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+            <!-- pontos finos pretos -->
+            <circle cx="9" cy="16" r="1" fill="#1A1A1A"/>
+            <circle cx="14" cy="16" r="1" fill="#1A1A1A"/>
+            <circle cx="19" cy="16" r="1" fill="#1A1A1A"/>
+            <circle cx="9" cy="21" r="1" fill="#1A1A1A"/>
+            <circle cx="14" cy="21" r="1" fill="#1A1A1A"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Data</div>
+        </div>
+
+        <!-- Passagem / Ticket -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- forma ticket espessa roxa -->
+            <path d="M3 9 L3 19 C3 19 7 19 7 14 C7 9 3 9 3 9 Z" stroke="#A528FF" stroke-width="3" stroke-linejoin="round" fill="none"/>
+            <path d="M3 9 L25 9 L25 19 C25 19 21 19 21 14 C21 9 25 9 25 9 Z" stroke="#A528FF" stroke-width="3" stroke-linejoin="round" fill="none"/>
+            <!-- linhas finas pretas -->
+            <line x1="10" y1="12" x2="18" y2="12" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+            <line x1="10" y1="16" x2="16" y2="16" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Passagem</div>
+        </div>
+
+        <!-- Busca / Lupa (conceito olhar) -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- círculo espesso roxo -->
+            <circle cx="12" cy="12" r="7" stroke="#A528FF" stroke-width="3"/>
+            <!-- cabo fino preto -->
+            <line x1="17.5" y1="17.5" x2="24" y2="24" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+            <!-- ponto central fino -->
+            <circle cx="12" cy="12" r="2" stroke="#1A1A1A" stroke-width="1"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Busca</div>
+        </div>
+
+        <!-- Usuário -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- cabeça espessa roxa -->
+            <circle cx="14" cy="9" r="5" stroke="#A528FF" stroke-width="3"/>
+            <!-- corpo espesso roxo -->
+            <path d="M5 25 C5 20 9 17 14 17 C19 17 23 20 23 25" stroke="#A528FF" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Usuário</div>
+        </div>
+
+        <!-- Assento / Poltrona -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- encosto espesso roxo -->
+            <rect x="7" y="4" width="14" height="14" rx="3" stroke="#A528FF" stroke-width="3"/>
+            <!-- assento espesso roxo -->
+            <path d="M5 18 L5 22 C5 23 6 24 7 24 L21 24 C22 24 23 23 23 22 L23 18" stroke="#A528FF" stroke-width="3" stroke-linecap="round"/>
+            <!-- pernas finas pretas -->
+            <line x1="8" y1="24" x2="8" y2="27" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+            <line x1="20" y1="24" x2="20" y2="27" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Poltrona</div>
+        </div>
+
+        <!-- Rota / Trajeto -->
+        <div style="text-align:center;">
+          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- linha de rota espessa roxa -->
+            <path d="M7 5 C7 5 7 14 14 14 C21 14 21 23 21 23" stroke="#A528FF" stroke-width="3" stroke-linecap="round"/>
+            <!-- ponto origem fino preto -->
+            <circle cx="7" cy="5" r="2.5" stroke="#1A1A1A" stroke-width="1" fill="white"/>
+            <!-- ponto destino fino preto -->
+            <circle cx="21" cy="23" r="2.5" stroke="#1A1A1A" stroke-width="1" fill="white"/>
+          </svg>
+          <div style="font-size:10px; color:#999; margin-top:8px;">Rota</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="icon-rules">
+      <div class="rule-card">
+        <h4>Construção — Grid 28×28</h4>
+        <ul>
+          <li>Traços espessos: <strong>3 módulos → stroke #A528FF</strong> (ou qualquer cor da paleta)</li>
+          <li>Traços finos: <strong>1 módulo → stroke #1A1A1A</strong> (ou branco sobre fundo escuro)</li>
+          <li>Máximo <strong>1 cor</strong> da paleta por ícone</li>
+          <li>Estilo outline — nunca filled</li>
+          <li>Simplificar ao essencial — sem detalhes extras</li>
+        </ul>
+      </div>
+      <div class="rule-card dont">
+        <h4 style="color:#FF5A4B;">✗ Não pode</h4>
+        <ul>
+          <li>Gradientes ou efeitos gráficos</li>
+          <li>Mais de 1 cor da paleta no mesmo ícone</li>
+          <li>Estilo preenchido (filled)</li>
+          <li>Detalhes excessivos fora do grid</li>
+          <li>Usar junto com padronagens poluídas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMAS -->
+  <div class="section" id="formas">
+    <div class="section-title">Formas</div>
+    <p class="section-desc">Cantos arredondados inspirados no símbolo da ClickBus. Usadas como máscaras para fotos, fundos coloridos e contêineres de texto.</p>
+
+    <div class="shape-grid">
+      <div class="shape-card">
+        <div class="shape-preview">
+          <div style="width:120px; height:80px; background:#A528FF; border-radius:0 24px 24px 24px; margin:0 auto; display:flex; align-items:center; justify-content:center;">
+            <div style="width:80px; height:2px; background:#fff; opacity:0.5;"></div>
+          </div>
+        </div>
+        <div class="shape-name">Ticket</div>
+        <div class="shape-desc">Curva roxa + linhas divisórias + 1 cor. Para informações práticas: preços, plataforma, temperatura.</div>
+      </div>
+      <div class="shape-card">
+        <div class="shape-preview">
+          <div style="width:80px; height:100px; background:#FFC800; border-radius:24px; margin:0 auto; position:relative; overflow:hidden;">
+            <div style="position:absolute; inset: 20px 10px 10px; background:rgba(255,255,255,0.3); border-radius:8px;"></div>
+          </div>
+        </div>
+        <div class="shape-name">Post</div>
+        <div class="shape-desc">Símbolo completo + retângulo central + 1 cor + foto + texto. Referência a posts de memórias de viagem.</div>
+      </div>
+      <div class="shape-card">
+        <div class="shape-preview">
+          <div style="width:120px; height:80px; background: linear-gradient(135deg, #91B4FF, #A528FF); border-radius:0 32px 32px 32px; margin:0 auto;"></div>
+        </div>
+        <div class="shape-name">Janela</div>
+        <div class="shape-desc">Curvatura do símbolo + imagem apenas (sem texto). Inspirado nas janelas de ônibus.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAFISMOS -->
+  <div class="section" id="grafismos">
+    <div class="section-title">Grafismos</div>
+    <p class="section-desc">Derivados do símbolo da marca. Dão versatilidade e personalidade às peças de comunicação.</p>
+
+    <div class="grid-2">
+      <div class="rule-card">
+        <h4>Trajeto</h4>
+        <ul>
+          <li>Utiliza apenas a parte <strong>roxa do símbolo</strong></li>
+          <li>Aplicado em larga escala</li>
+          <li>Conecta ponta a ponta do layout</li>
+          <li>Manter posicionamento original do símbolo na Marca</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <h4>Ônibus</h4>
+        <ul>
+          <li><strong>Sobreposição:</strong> ônibus verticais em cores da paleta (multiplicidade de destinos)</li>
+          <li><strong>Padronagem:</strong> ônibus dispostos em padrão repetido, colorido e carismático</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOTOGRAFIA -->
+  <div class="section" id="fotografia">
+    <div class="section-title">Fotografia</div>
+    <p class="section-desc">Retrata a viagem e os momentos marcantes — da preparação ao destino. 3 diretrizes principais.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px;">
+      <div style="background:#A528FF; color:#fff; border-radius:12px; padding:20px;">
+        <div style="font-size:13px; font-weight:700; margin-bottom:8px;">Reais e diversas</div>
+        <div style="font-size:12px; opacity:0.9; line-height:1.6;">Diversidade de pessoas, cenas autênticas, múltiplos contextos de viagem (trabalho, família, férias).</div>
+        <div style="font-size:11px; margin-top:10px; opacity:0.7;">✗ Pessoas artificiais · Recortadas s/ fundo</div>
+      </div>
+      <div style="background:#FFC800; color:#1A1A1A; border-radius:12px; padding:20px;">
+        <div style="font-size:13px; font-weight:700; margin-bottom:8px;">De encher os olhos</div>
+        <div style="font-size:12px; line-height:1.6;">Cenários inspiradores, ângulos inesperados, sorrisos largos. Imagens convidativas e aspiracionais.</div>
+        <div style="font-size:11px; margin-top:10px; opacity:0.6;">✗ Cenas melancólicas · Imagens clichê</div>
+      </div>
+      <div style="background:#1A1A1A; color:#fff; border-radius:12px; padding:20px;">
+        <div style="font-size:13px; font-weight:700; margin-bottom:8px;">Naturalmente calorosa</div>
+        <div style="font-size:12px; opacity:0.9; line-height:1.6;">Iluminação quente, tratamento natural. Toques das cores da marca sempre que possível.</div>
+        <div style="font-size:11px; margin-top:10px; opacity:0.6;">✗ B&W · Tons frios · Filtros excessivos</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:#555;">Editorias</h3>
+    <table class="tokens-table">
+      <thead><tr><th>Editoria</th><th>Descrição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Viagem</strong></td><td>Momentos pré ou durante o trajeto de ônibus: arrumação de malas, rodoviárias, interior do ônibus</td></tr>
+        <tr><td><strong>Destino</strong></td><td>Caráter aspiracional: monumentos icônicos, paisagens convidativas, eventos e datas especiais</td></tr>
+        <tr><td><strong>Momentos</strong></td><td>Emoções e experiências humanas: reencontros, abraços, atividades, retratos pessoais</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TOM DE VOZ -->
+  <div class="section" id="voz">
+    <div class="section-title">Tom de Voz</div>
+    <p class="section-desc">3 tons complementares que se combinam em cada comunicação. A voz da ClickBus tem muito o que contar — e o seu jeito próprio de falar.</p>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <h3>Leve com Carisma</h3>
+        <div class="sub">Positividade + Brasilidade</div>
+        <div class="pode">
+          <strong>✓ Pode</strong>
+          <ul>
+            <li>Falar com bom ânimo em todos os pontos de contato</li>
+            <li>Trazer brasilidade: neologismos, expressões frescas</li>
+            <li>Contextualizar com cultura, destinos, eventos</li>
+            <li>"Você viajável", "Bora pra Beagá"</li>
+          </ul>
+        </div>
+        <div class="nao-pode">
+          <strong>✗ Não pode</strong>
+          <ul>
+            <li>Regionalismos desconexos da personalidade</li>
+            <li>Memes ou gírias inapropriadas</li>
+            <li>Exclamações ou energia excessiva</li>
+          </ul>
+        </div>
+      </div>
+      <div class="voice-card">
+        <h3>Fala em Transformação</h3>
+        <div class="sub">Diferencial + Smart Choice</div>
+        <div class="pode">
+          <strong>✓ Pode</strong>
+          <ul>
+            <li>Textos de "antes e depois" / condição melhorada</li>
+            <li>"Com click" como recurso de transformação</li>
+            <li>Evidenciar benefícios e credenciais</li>
+            <li>Contextualizar com vivências do dia a dia</li>
+          </ul>
+        </div>
+        <div class="nao-pode">
+          <strong>✗ Não pode</strong>
+          <ul>
+            <li>"Com click" em excesso ou no título E no CTA</li>
+            <li>Comparações provocativas com concorrência</li>
+          </ul>
+        </div>
+      </div>
+      <div class="voice-card">
+        <h3>Chama Todo Mundo</h3>
+        <div class="sub">Inclusividade + Convite</div>
+        <div class="pode">
+          <strong>✓ Pode</strong>
+          <ul>
+            <li>Títulos com intenção de convite + contexto de viagem</li>
+            <li>Soar receptivo, valorizar o encontro</li>
+            <li>Adaptar para diferentes perfis de viajante</li>
+            <li>"Mochileira, empresária ou atleta"</li>
+          </ul>
+        </div>
+        <div class="nao-pode">
+          <strong>✗ Não pode</strong>
+          <ul>
+            <li>Tratamento excessivamente íntimo ("entrão")</li>
+            <li>Excluir perfis ou situações de viagem</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <h3 style="font-size:14px; font-weight:700; margin-bottom:12px; color:#555;">Expressões Proprietárias</h3>
+    <div>
+      <span class="chip purple">Com Clickbus</span>
+      <span class="chip purple">Com Click</span>
+      <span class="chip">Bora pra Beagá</span>
+      <span class="chip">Muda a rota pra melhor</span>
+      <span class="chip">Rotas pra todo mundo</span>
+      <span class="chip">Lado bom da janela</span>
+      <span class="chip">Onde o avião não chega</span>
+      <span class="chip">Você viajável</span>
+      <span class="chip">Vem pra Baêa</span>
+      <span class="chip">Sampa – Errejota</span>
+      <span class="chip">Mais histórias Brasil afora</span>
+      <span class="chip">Do escritório ao festival</span>
+      <span class="chip">Encontros únicos</span>
+    </div>
+  </div>
+
+  <!-- COMPORTAMENTO -->
+  <div class="section" id="comportamento">
+    <div class="section-title">Comportamento de Marca</div>
+    <p class="section-desc">Expressões práticas que direcionam como os elementos visuais e verbais ganham vida na comunicação.</p>
+
+    <div class="behavior-grid">
+      <div class="behavior-card">
+        <div class="behavior-number">1</div>
+        <div>
+          <h3>Cativante</h3>
+          <div class="tom">Tom: "Leve com Carisma"</div>
+          <ul>
+            <li>Iconografia e símbolo carismáticos</li>
+            <li>Cores alegres e acolhedoras da paleta</li>
+            <li>Fotografias autênticas e reais</li>
+            <li>Linguagem com brasilidade e bom humor</li>
+          </ul>
+        </div>
+      </div>
+      <div class="behavior-card">
+        <div class="behavior-number">2</div>
+        <div>
+          <h3>Inclusiva</h3>
+          <div class="tom">Tom: "Chama Todo Mundo"</div>
+          <ul>
+            <li>Linguagem limpa, direta e acessível</li>
+            <li>Diversidade de perfis e situações retratados</li>
+            <li>Diferentes contextos de viagem representados</li>
+            <li>Visual sem barreiras de entendimento</li>
+          </ul>
+        </div>
+      </div>
+      <div class="behavior-card">
+        <div class="behavior-number">3</div>
+        <div>
+          <h3>Inovadora</h3>
+          <div class="tom">Tom: "Fala em Transformação"</div>
+          <ul>
+            <li>Linguagem sem excessos, foge de clichês da categoria</li>
+            <li>Marca com múltiplas camadas de significado</li>
+            <li>Símbolo mutável por ocasião/sazonalidade</li>
+            <li>Visual surpreendente e inesperado</li>
+          </ul>
+        </div>
+      </div>
+      <div class="behavior-card">
+        <div class="behavior-number">4</div>
+        <div>
+          <h3>Impulsionadora</h3>
+          <div class="tom">Tagline: "Viajar muda a gente"</div>
+          <ul>
+            <li>Imagens em sobreposição com energia</li>
+            <li>Grafismo com movimento ascendente</li>
+            <li>Imagens convidativas e com energia positiva</li>
+            <li>Visual que provoca desejo de viajar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Design System <strong>ClickBus</strong> · Extraído do Brandbook oficial (Ana Couto) · Adaptação web: Poppins substitui Carbona · Projeto UX_ClickBus / Elementor Pro
+</footer>
+
+</body>
+</html>
