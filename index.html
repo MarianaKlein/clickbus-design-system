@@ -371,42 +371,25 @@
     <div class="section-title">Marca / Logo</div>
     <p class="section-desc">A versão principal é em 2 linhas. Cada variação tem contexto específico — não substituir umas pelas outras sem critério.</p>
 
-    <!-- SVG definitions reutilizáveis -->
+    <!-- SVG definitions — símbolo real ClickBus -->
     <svg width="0" height="0" style="position:absolute;">
       <defs>
-        <!-- SÍMBOLO CLICKBUS: C-curve (trajeto) + 2 circles (olhos/rodas) -->
-        <symbol id="cb-symbol-purple" viewBox="0 0 64 64">
-          <!-- Corpo do ônibus / arc C -->
-          <path d="M52 32 C52 18 43 10 32 10 C21 10 12 18 12 32 C12 46 21 54 32 54 L52 54 C52 54 52 46 52 32Z" fill="#A528FF"/>
-          <!-- Dois círculos brancos: olhos / rodas -->
-          <circle cx="26" cy="32" r="7" fill="#fff"/>
-          <circle cx="42" cy="32" r="7" fill="#fff"/>
-          <!-- Detalhe fino: pupilas (conceito olhar) -->
-          <circle cx="26" cy="32" r="3" fill="#A528FF"/>
-          <circle cx="42" cy="32" r="3" fill="#A528FF"/>
+        <!-- SÍMBOLO CLICKBUS REAL: curva-C da identidade oficial (extraído do SVG de marca) -->
+        <symbol id="cb-symbol-purple" viewBox="0 0 118 41">
+          <path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#A528FF" fill-rule="nonzero"/>
         </symbol>
-        <symbol id="cb-symbol-white" viewBox="0 0 64 64">
-          <path d="M52 32 C52 18 43 10 32 10 C21 10 12 18 12 32 C12 46 21 54 32 54 L52 54 C52 54 52 46 52 32Z" fill="#fff"/>
-          <circle cx="26" cy="32" r="7" fill="#1A1A1A"/>
-          <circle cx="42" cy="32" r="7" fill="#1A1A1A"/>
-          <circle cx="26" cy="32" r="3" fill="#fff"/>
-          <circle cx="42" cy="32" r="3" fill="#fff"/>
+        <symbol id="cb-symbol-white" viewBox="0 0 118 41">
+          <path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#FFFFFF" fill-rule="nonzero"/>
         </symbol>
-        <symbol id="cb-symbol-black" viewBox="0 0 64 64">
-          <path d="M52 32 C52 18 43 10 32 10 C21 10 12 18 12 32 C12 46 21 54 32 54 L52 54 C52 54 52 46 52 32Z" fill="#1A1A1A"/>
-          <circle cx="26" cy="32" r="7" fill="#fff"/>
-          <circle cx="42" cy="32" r="7" fill="#fff"/>
-          <circle cx="26" cy="32" r="3" fill="#1A1A1A"/>
-          <circle cx="42" cy="32" r="3" fill="#1A1A1A"/>
+        <symbol id="cb-symbol-black" viewBox="0 0 118 41">
+          <path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#1A1A1A" fill-rule="nonzero"/>
         </symbol>
-        <!-- APP ICON: símbolo sobre fundo arredondado roxo -->
+        <!-- APP ICON: símbolo real sobre fundo arredondado roxo -->
         <symbol id="cb-app-icon" viewBox="0 0 64 64">
           <rect width="64" height="64" rx="14" fill="#A528FF"/>
-          <path d="M48 32 C48 20 40 13 32 13 C24 13 16 20 16 32 C16 44 24 51 32 51 L48 51 C48 51 48 44 48 32Z" fill="#1A1A1A"/>
-          <circle cx="27" cy="32" r="6" fill="#fff"/>
-          <circle cx="40" cy="32" r="6" fill="#fff"/>
-          <circle cx="27" cy="32" r="2.5" fill="#1A1A1A"/>
-          <circle cx="40" cy="32" r="2.5" fill="#1A1A1A"/>
+          <g transform="translate(4, 14) scale(0.47)">
+            <path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#FFFFFF" fill-rule="nonzero"/>
+          </g>
         </symbol>
       </defs>
     </svg>
@@ -414,39 +397,33 @@
     <div class="logo-grid">
       <!-- Versão Principal -->
       <div class="logo-card">
-        <div class="logo-preview bg-white" style="gap:12px; flex-direction:column; align-items:flex-start; padding:28px;">
-          <svg width="52" height="52" style="display:block;"><use href="#cb-symbol-purple"/></svg>
-          <div class="logo-text" style="font-size:30px; color:#1A1A1A; letter-spacing:-0.03em;">CLICKBUS</div>
+        <div class="logo-preview bg-white" style="align-items:flex-start; padding:32px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="164" height="39" viewBox="0 0 206.59 49.32" fill="none" style="display:block;"><path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#A528FF" fill-rule="nonzero"/><g transform="translate(29.65, 27.59)" fill="#1A1A1A"><path d="M 82.33 21.27 L 88.27 21.27 L 88.27 14.79 C 89.62 14.33 90.96 13.76 92.2 13.06 C 94.53 15.82 95.81 18.16 96.98 21.27 L 103.63 21.27 C 102.46 17.38 99.56 12.28 96.8 9.77 C 99.63 7.26 101.75 4.14 102.92 0.46 L 96.66 0.46 C 95.56 3.89 92.34 7.43 88.27 9.13 L 88.27 0.46 L 82.33 0.46 L 82.33 21.26 L 82.33 21.27 Z M 68.22 21.73 C 74.31 21.73 78.48 18.51 78.87 12.95 L 72.75 12.95 C 72.5 14.76 71.02 16.24 68.04 16.24 C 64.43 16.24 62.56 14.05 62.56 10.86 C 62.56 7.67 64.29 5.45 67.97 5.45 C 70.94 5.45 72.5 6.97 72.75 8.85 L 78.87 8.85 C 78.62 3.9 75.01 0 67.83 0 C 60.65 0 56.47 4.14 56.47 10.97 C 56.47 17.8 61.14 21.73 68.22 21.73 Z M 46.99 21.27 L 53.08 21.27 L 53.08 0.47 L 46.99 0.47 L 46.99 21.27 Z M 31.1 21.27 L 42.81 21.27 L 42.81 16.21 L 33.19 16.21 C 32.13 16.21 31.67 15.75 31.67 14.69 L 31.67 0.47 L 25.58 0.47 L 25.58 15.75 C 25.58 19.01 27.84 21.27 31.1 21.27 Z M 166.93 21.73 C 173.65 21.73 176.94 19.15 176.94 14.97 C 176.94 11.33 174.6 9.17 169.76 8.53 L 167.39 8.21 C 163.78 7.71 162.54 7.43 162.54 6.33 C 162.54 5.38 163.64 4.74 166.29 4.74 C 169.55 4.74 172.91 5.38 175.38 6.15 L 175.38 1.34 C 173.65 0.63 170.53 0 166.85 0 C 160.09 0 156.59 2.55 156.59 6.72 C 156.59 10.54 159.35 12.42 164.09 13.16 L 166.6 13.55 C 169.82 14.04 170.92 14.43 170.92 15.35 C 170.92 16.27 170.04 16.98 167.31 16.98 C 163.95 16.98 160.2 16.1 157.05 14.79 L 157.05 19.85 C 159.42 20.84 162.85 21.73 166.92 21.73 M 11.75 21.73 C 17.84 21.73 22.01 18.51 22.4 12.95 L 16.28 12.95 C 16.03 14.76 14.55 16.24 11.57 16.24 C 7.96 16.24 6.09 14.05 6.09 10.86 C 6.09 7.67 7.82 5.45 11.5 5.45 C 14.47 5.45 16.03 6.97 16.28 8.85 L 22.4 8.85 C 22.15 3.9 18.54 0 11.36 0 C 4.18 0 0 4.14 0 10.97 C 0 17.8 4.67 21.73 11.75 21.73 Z M 142.16 21.73 C 149.2 21.73 152.88 18.26 152.88 12.32 L 152.88 0.47 L 146.79 0.47 L 146.79 12.25 C 146.79 14.69 144.99 16.25 142.15 16.25 C 139.31 16.25 137.55 14.69 137.55 12.25 L 137.55 0.47 L 131.46 0.47 L 131.46 12.32 C 131.46 18.26 135.6 21.73 142.15 21.73 M 112.62 8.64 L 112.62 5.35 L 117.82 5.35 C 120.03 5.35 120.99 6 120.99 7.02 C 120.99 8.04 120.03 8.65 117.82 8.65 L 112.62 8.65 L 112.62 8.64 Z M 112.62 16.4 L 112.62 13.12 L 118.03 13.12 C 120.56 13.12 121.52 13.8 121.52 14.76 C 121.52 15.78 120.49 16.41 118.03 16.41 L 112.62 16.41 L 112.62 16.4 Z M 106.7 21.27 L 119.17 21.27 C 124.93 21.27 127.61 19 127.61 15.32 C 127.61 12.17 125.46 10.79 122.55 10.76 C 124.97 10.47 126.85 9.32 126.85 6.63 C 126.85 3.4 124.4 0.46 119.02 0.46 L 106.7 0.46 L 106.7 21.26 L 106.7 21.27 Z"></path></g></svg>
         </div>
-        <div class="logo-name">Versão Principal (2 linhas)</div>
-        <div class="logo-desc">Símbolo em roxo + wordmark preto. Uso padrão em fundos brancos/claros.</div>
+        <div class="logo-name">Versão Principal (horizontal)</div>
+        <div class="logo-desc">Logo completa com wordmark preto. Uso padrão em fundos brancos/claros.</div>
       </div>
       <!-- Horizontal -->
       <div class="logo-card">
-        <div class="logo-preview bg-purple" style="gap:14px; align-items:center;">
-          <svg width="44" height="44" style="display:block;"><use href="#cb-symbol-white"/></svg>
-          <div class="logo-text" style="font-size:26px; color:#fff; letter-spacing:-0.03em;">CLICKBUS</div>
+        <div class="logo-preview bg-purple" style="align-items:center; justify-content:center; padding:32px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="164" height="39" viewBox="0 0 206.59 49.32" fill="none" style="display:block;"><path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#A528FF" fill-rule="nonzero"/><g transform="translate(29.65, 27.59)" fill="#FFFFFF"><path d="M 82.33 21.27 L 88.27 21.27 L 88.27 14.79 C 89.62 14.33 90.96 13.76 92.2 13.06 C 94.53 15.82 95.81 18.16 96.98 21.27 L 103.63 21.27 C 102.46 17.38 99.56 12.28 96.8 9.77 C 99.63 7.26 101.75 4.14 102.92 0.46 L 96.66 0.46 C 95.56 3.89 92.34 7.43 88.27 9.13 L 88.27 0.46 L 82.33 0.46 L 82.33 21.26 L 82.33 21.27 Z M 68.22 21.73 C 74.31 21.73 78.48 18.51 78.87 12.95 L 72.75 12.95 C 72.5 14.76 71.02 16.24 68.04 16.24 C 64.43 16.24 62.56 14.05 62.56 10.86 C 62.56 7.67 64.29 5.45 67.97 5.45 C 70.94 5.45 72.5 6.97 72.75 8.85 L 78.87 8.85 C 78.62 3.9 75.01 0 67.83 0 C 60.65 0 56.47 4.14 56.47 10.97 C 56.47 17.8 61.14 21.73 68.22 21.73 Z M 46.99 21.27 L 53.08 21.27 L 53.08 0.47 L 46.99 0.47 L 46.99 21.27 Z M 31.1 21.27 L 42.81 21.27 L 42.81 16.21 L 33.19 16.21 C 32.13 16.21 31.67 15.75 31.67 14.69 L 31.67 0.47 L 25.58 0.47 L 25.58 15.75 C 25.58 19.01 27.84 21.27 31.1 21.27 Z M 166.93 21.73 C 173.65 21.73 176.94 19.15 176.94 14.97 C 176.94 11.33 174.6 9.17 169.76 8.53 L 167.39 8.21 C 163.78 7.71 162.54 7.43 162.54 6.33 C 162.54 5.38 163.64 4.74 166.29 4.74 C 169.55 4.74 172.91 5.38 175.38 6.15 L 175.38 1.34 C 173.65 0.63 170.53 0 166.85 0 C 160.09 0 156.59 2.55 156.59 6.72 C 156.59 10.54 159.35 12.42 164.09 13.16 L 166.6 13.55 C 169.82 14.04 170.92 14.43 170.92 15.35 C 170.92 16.27 170.04 16.98 167.31 16.98 C 163.95 16.98 160.2 16.1 157.05 14.79 L 157.05 19.85 C 159.42 20.84 162.85 21.73 166.92 21.73 M 11.75 21.73 C 17.84 21.73 22.01 18.51 22.4 12.95 L 16.28 12.95 C 16.03 14.76 14.55 16.24 11.57 16.24 C 7.96 16.24 6.09 14.05 6.09 10.86 C 6.09 7.67 7.82 5.45 11.5 5.45 C 14.47 5.45 16.03 6.97 16.28 8.85 L 22.4 8.85 C 22.15 3.9 18.54 0 11.36 0 C 4.18 0 0 4.14 0 10.97 C 0 17.8 4.67 21.73 11.75 21.73 Z M 142.16 21.73 C 149.2 21.73 152.88 18.26 152.88 12.32 L 152.88 0.47 L 146.79 0.47 L 146.79 12.25 C 146.79 14.69 144.99 16.25 142.15 16.25 C 139.31 16.25 137.55 14.69 137.55 12.25 L 137.55 0.47 L 131.46 0.47 L 131.46 12.32 C 131.46 18.26 135.6 21.73 142.15 21.73 M 112.62 8.64 L 112.62 5.35 L 117.82 5.35 C 120.03 5.35 120.99 6 120.99 7.02 C 120.99 8.04 120.03 8.65 117.82 8.65 L 112.62 8.65 L 112.62 8.64 Z M 112.62 16.4 L 112.62 13.12 L 118.03 13.12 C 120.56 13.12 121.52 13.8 121.52 14.76 C 121.52 15.78 120.49 16.41 118.03 16.41 L 112.62 16.41 L 112.62 16.4 Z M 106.7 21.27 L 119.17 21.27 C 124.93 21.27 127.61 19 127.61 15.32 C 127.61 12.17 125.46 10.79 122.55 10.76 C 124.97 10.47 126.85 9.32 126.85 6.63 C 126.85 3.4 124.4 0.46 119.02 0.46 L 106.7 0.46 L 106.7 21.26 L 106.7 21.27 Z"></path></g></svg>
         </div>
-        <div class="logo-name">Horizontal (Restrita)</div>
-        <div class="logo-desc">Símbolo branco + wordmark branco. Apenas headers, faixas e banners horizontais.</div>
+        <div class="logo-name">Versão Branca (fundo roxo)</div>
+        <div class="logo-desc">Logo completa em branco. Para headers, faixas e banners sobre fundo roxo ou colorido.</div>
       </div>
       <!-- Negativa -->
       <div class="logo-card">
-        <div class="logo-preview bg-black" style="gap:12px; flex-direction:column; align-items:flex-start; padding:28px;">
-          <svg width="52" height="52" style="display:block;"><use href="#cb-symbol-white"/></svg>
-          <div class="logo-text" style="font-size:30px; color:#fff; letter-spacing:-0.03em;">CLICKBUS</div>
+        <div class="logo-preview bg-black" style="align-items:center; justify-content:center; padding:32px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="164" height="39" viewBox="0 0 206.59 49.32" fill="none" style="display:block;"><path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#A528FF" fill-rule="nonzero"/><g transform="translate(29.65, 27.59)" fill="#FFFFFF"><path d="M 82.33 21.27 L 88.27 21.27 L 88.27 14.79 C 89.62 14.33 90.96 13.76 92.2 13.06 C 94.53 15.82 95.81 18.16 96.98 21.27 L 103.63 21.27 C 102.46 17.38 99.56 12.28 96.8 9.77 C 99.63 7.26 101.75 4.14 102.92 0.46 L 96.66 0.46 C 95.56 3.89 92.34 7.43 88.27 9.13 L 88.27 0.46 L 82.33 0.46 L 82.33 21.26 L 82.33 21.27 Z M 68.22 21.73 C 74.31 21.73 78.48 18.51 78.87 12.95 L 72.75 12.95 C 72.5 14.76 71.02 16.24 68.04 16.24 C 64.43 16.24 62.56 14.05 62.56 10.86 C 62.56 7.67 64.29 5.45 67.97 5.45 C 70.94 5.45 72.5 6.97 72.75 8.85 L 78.87 8.85 C 78.62 3.9 75.01 0 67.83 0 C 60.65 0 56.47 4.14 56.47 10.97 C 56.47 17.8 61.14 21.73 68.22 21.73 Z M 46.99 21.27 L 53.08 21.27 L 53.08 0.47 L 46.99 0.47 L 46.99 21.27 Z M 31.1 21.27 L 42.81 21.27 L 42.81 16.21 L 33.19 16.21 C 32.13 16.21 31.67 15.75 31.67 14.69 L 31.67 0.47 L 25.58 0.47 L 25.58 15.75 C 25.58 19.01 27.84 21.27 31.1 21.27 Z M 166.93 21.73 C 173.65 21.73 176.94 19.15 176.94 14.97 C 176.94 11.33 174.6 9.17 169.76 8.53 L 167.39 8.21 C 163.78 7.71 162.54 7.43 162.54 6.33 C 162.54 5.38 163.64 4.74 166.29 4.74 C 169.55 4.74 172.91 5.38 175.38 6.15 L 175.38 1.34 C 173.65 0.63 170.53 0 166.85 0 C 160.09 0 156.59 2.55 156.59 6.72 C 156.59 10.54 159.35 12.42 164.09 13.16 L 166.6 13.55 C 169.82 14.04 170.92 14.43 170.92 15.35 C 170.92 16.27 170.04 16.98 167.31 16.98 C 163.95 16.98 160.2 16.1 157.05 14.79 L 157.05 19.85 C 159.42 20.84 162.85 21.73 166.92 21.73 M 11.75 21.73 C 17.84 21.73 22.01 18.51 22.4 12.95 L 16.28 12.95 C 16.03 14.76 14.55 16.24 11.57 16.24 C 7.96 16.24 6.09 14.05 6.09 10.86 C 6.09 7.67 7.82 5.45 11.5 5.45 C 14.47 5.45 16.03 6.97 16.28 8.85 L 22.4 8.85 C 22.15 3.9 18.54 0 11.36 0 C 4.18 0 0 4.14 0 10.97 C 0 17.8 4.67 21.73 11.75 21.73 Z M 142.16 21.73 C 149.2 21.73 152.88 18.26 152.88 12.32 L 152.88 0.47 L 146.79 0.47 L 146.79 12.25 C 146.79 14.69 144.99 16.25 142.15 16.25 C 139.31 16.25 137.55 14.69 137.55 12.25 L 137.55 0.47 L 131.46 0.47 L 131.46 12.32 C 131.46 18.26 135.6 21.73 142.15 21.73 M 112.62 8.64 L 112.62 5.35 L 117.82 5.35 C 120.03 5.35 120.99 6 120.99 7.02 C 120.99 8.04 120.03 8.65 117.82 8.65 L 112.62 8.65 L 112.62 8.64 Z M 112.62 16.4 L 112.62 13.12 L 118.03 13.12 C 120.56 13.12 121.52 13.8 121.52 14.76 C 121.52 15.78 120.49 16.41 118.03 16.41 L 112.62 16.41 L 112.62 16.4 Z M 106.7 21.27 L 119.17 21.27 C 124.93 21.27 127.61 19 127.61 15.32 C 127.61 12.17 125.46 10.79 122.55 10.76 C 124.97 10.47 126.85 9.32 126.85 6.63 C 126.85 3.4 124.4 0.46 119.02 0.46 L 106.7 0.46 L 106.7 21.26 L 106.7 21.27 Z"></path></g></svg>
         </div>
-        <div class="logo-name">Negativa</div>
-        <div class="logo-desc">Símbolo branco + wordmark branco sobre fundos escuros ou fotográficos.</div>
+        <div class="logo-name">Negativa (fundo escuro)</div>
+        <div class="logo-desc">Logo em branco sobre fundos escuros ou fotográficos.</div>
       </div>
       <!-- Com Tagline -->
       <div class="logo-card">
-        <div class="logo-preview bg-white" style="gap:10px; flex-direction:column; align-items:flex-start; padding:28px;">
-          <svg width="52" height="52" style="display:block;"><use href="#cb-symbol-purple"/></svg>
-          <div>
-            <div class="logo-text" style="font-size:30px; color:#1A1A1A; letter-spacing:-0.03em;">CLICKBUS</div>
-            <div style="font-size:8px; letter-spacing:0.18em; color:#1A1A1A; font-weight:600; margin-top:2px; text-transform:uppercase;">Viajar muda a gente</div>
-          </div>
+        <div class="logo-preview bg-white" style="flex-direction:column; align-items:flex-start; padding:28px; gap:8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="164" height="39" viewBox="0 0 206.59 49.32" fill="none" style="display:block;"><path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#A528FF" fill-rule="nonzero"/><g transform="translate(29.65, 27.59)" fill="#1A1A1A"><path d="M 82.33 21.27 L 88.27 21.27 L 88.27 14.79 C 89.62 14.33 90.96 13.76 92.2 13.06 C 94.53 15.82 95.81 18.16 96.98 21.27 L 103.63 21.27 C 102.46 17.38 99.56 12.28 96.8 9.77 C 99.63 7.26 101.75 4.14 102.92 0.46 L 96.66 0.46 C 95.56 3.89 92.34 7.43 88.27 9.13 L 88.27 0.46 L 82.33 0.46 L 82.33 21.26 L 82.33 21.27 Z M 68.22 21.73 C 74.31 21.73 78.48 18.51 78.87 12.95 L 72.75 12.95 C 72.5 14.76 71.02 16.24 68.04 16.24 C 64.43 16.24 62.56 14.05 62.56 10.86 C 62.56 7.67 64.29 5.45 67.97 5.45 C 70.94 5.45 72.5 6.97 72.75 8.85 L 78.87 8.85 C 78.62 3.9 75.01 0 67.83 0 C 60.65 0 56.47 4.14 56.47 10.97 C 56.47 17.8 61.14 21.73 68.22 21.73 Z M 46.99 21.27 L 53.08 21.27 L 53.08 0.47 L 46.99 0.47 L 46.99 21.27 Z M 31.1 21.27 L 42.81 21.27 L 42.81 16.21 L 33.19 16.21 C 32.13 16.21 31.67 15.75 31.67 14.69 L 31.67 0.47 L 25.58 0.47 L 25.58 15.75 C 25.58 19.01 27.84 21.27 31.1 21.27 Z M 166.93 21.73 C 173.65 21.73 176.94 19.15 176.94 14.97 C 176.94 11.33 174.6 9.17 169.76 8.53 L 167.39 8.21 C 163.78 7.71 162.54 7.43 162.54 6.33 C 162.54 5.38 163.64 4.74 166.29 4.74 C 169.55 4.74 172.91 5.38 175.38 6.15 L 175.38 1.34 C 173.65 0.63 170.53 0 166.85 0 C 160.09 0 156.59 2.55 156.59 6.72 C 156.59 10.54 159.35 12.42 164.09 13.16 L 166.6 13.55 C 169.82 14.04 170.92 14.43 170.92 15.35 C 170.92 16.27 170.04 16.98 167.31 16.98 C 163.95 16.98 160.2 16.1 157.05 14.79 L 157.05 19.85 C 159.42 20.84 162.85 21.73 166.92 21.73 M 11.75 21.73 C 17.84 21.73 22.01 18.51 22.4 12.95 L 16.28 12.95 C 16.03 14.76 14.55 16.24 11.57 16.24 C 7.96 16.24 6.09 14.05 6.09 10.86 C 6.09 7.67 7.82 5.45 11.5 5.45 C 14.47 5.45 16.03 6.97 16.28 8.85 L 22.4 8.85 C 22.15 3.9 18.54 0 11.36 0 C 4.18 0 0 4.14 0 10.97 C 0 17.8 4.67 21.73 11.75 21.73 Z M 142.16 21.73 C 149.2 21.73 152.88 18.26 152.88 12.32 L 152.88 0.47 L 146.79 0.47 L 146.79 12.25 C 146.79 14.69 144.99 16.25 142.15 16.25 C 139.31 16.25 137.55 14.69 137.55 12.25 L 137.55 0.47 L 131.46 0.47 L 131.46 12.32 C 131.46 18.26 135.6 21.73 142.15 21.73 M 112.62 8.64 L 112.62 5.35 L 117.82 5.35 C 120.03 5.35 120.99 6 120.99 7.02 C 120.99 8.04 120.03 8.65 117.82 8.65 L 112.62 8.65 L 112.62 8.64 Z M 112.62 16.4 L 112.62 13.12 L 118.03 13.12 C 120.56 13.12 121.52 13.8 121.52 14.76 C 121.52 15.78 120.49 16.41 118.03 16.41 L 112.62 16.41 L 112.62 16.4 Z M 106.7 21.27 L 119.17 21.27 C 124.93 21.27 127.61 19 127.61 15.32 C 127.61 12.17 125.46 10.79 122.55 10.76 C 124.97 10.47 126.85 9.32 126.85 6.63 C 126.85 3.4 124.4 0.46 119.02 0.46 L 106.7 0.46 L 106.7 21.26 L 106.7 21.27 Z"></path></g></svg>
+          <div style="font-size:9px; letter-spacing:0.2em; color:#6E6E6E; font-weight:600; text-transform:uppercase; font-family:Poppins,sans-serif; margin-top:4px;">Viajar muda a gente</div>
         </div>
         <div class="logo-name">Marca + Tagline</div>
         <div class="logo-desc">Com posicionamento. Usar quando o contexto exige reforço da identidade.</div>
@@ -465,8 +442,8 @@
       </div>
       <!-- Símbolo standalone -->
       <div class="logo-card">
-        <div class="logo-preview bg-purple" style="gap:16px; align-items:center; justify-content:center;">
-          <svg width="80" height="80" style="display:block;"><use href="#cb-symbol-white"/></svg>
+        <div class="logo-preview bg-purple" style="align-items:center; justify-content:center; padding:32px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="118" height="40" viewBox="0 0 118 41" fill="none" style="display:block;"><path d="M 1.56 40.58 L 21.66 40.58 C 22.19 40.58 22.54 40.19 22.54 39.7 L 22.54 38.82 C 22.54 27.25 29.37 20.77 41.47 20.77 L 117.05 20.77 C 117.58 20.77 117.94 20.42 117.94 19.89 L 117.94 0.88 C 117.94 0.35 117.59 0 117.05 0 L 37.68 0 C 15.53 0 0 13.3 0 32.23 C 0 35.17 0.14 37.54 0.49 39.59 C 0.6 40.19 0.91 40.58 1.55 40.58" fill="#FFFFFF" fill-rule="nonzero"/></svg>
         </div>
         <div class="logo-name">Símbolo Isolado</div>
         <div class="logo-desc">Apenas em contextos onde a relação com a marca ClickBus já está estabelecida (páginas internas, lojas, peças assinadas).</div>
@@ -512,146 +489,104 @@
     <div class="section-title">Iconografia</div>
     <p class="section-desc">Ícones com linhas espessas coloridas e finas pretas. Inspirados na estética da marca. Podem ter protagonismo visual ou função utilitária.</p>
 
-    <!-- EXEMPLOS DE ÍCONES SVG — estilo ClickBus: stroke espesso (3mod=roxo) + stroke fino (1mod=preto) -->
+    <!-- ÍCONES REAIS DA MARCA CLICKBUS (fundo branco) -->
     <div style="background:#1A1A1A; border-radius:16px; padding:32px; margin-bottom:24px;">
-      <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#FFC800; margin-bottom:20px;">Exemplos de ícones — grid 28×28 / stroke espesso roxo + fino preto</div>
-      <div style="display:flex; flex-wrap:wrap; gap:32px; align-items:flex-end;">
-
-        <!-- Ônibus -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- corpo espesso roxo -->
-            <rect x="3" y="7" width="22" height="13" rx="3" stroke="#A528FF" stroke-width="3" stroke-linejoin="round"/>
-            <!-- janelas finas pretas -->
-            <rect x="6" y="10" width="4" height="3" rx="1" stroke="#1A1A1A" stroke-width="1"/>
-            <rect x="12" y="10" width="4" height="3" rx="1" stroke="#1A1A1A" stroke-width="1"/>
-            <rect x="18" y="10" width="4" height="3" rx="1" stroke="#1A1A1A" stroke-width="1"/>
-            <!-- rodas espessas roxas -->
-            <circle cx="8" cy="22" r="2.5" stroke="#A528FF" stroke-width="3"/>
-            <circle cx="20" cy="22" r="2.5" stroke="#A528FF" stroke-width="3"/>
-            <!-- detalhe porta fino -->
-            <line x1="3" y1="14" x2="25" y2="14" stroke="#1A1A1A" stroke-width="1"/>
+      <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#FFC800; margin-bottom:20px;">Biblioteca de ícones — Marca ClickBus / estilo filled / roxo #A528FF + preto #1A1A1A</div>
+      <div style="display:flex; flex-wrap:wrap; gap:32px; align-items:flex-end; justify-content:flex-start;">
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="50" height="64" viewBox="0 0 225 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40.87 183.77V183.85H183.89V183.77H40.87Z" fill="#1A1A1A"/>
+<path d="M224.75 143.02V219.64C224.75 239.36 208.71 255.39 189 255.39H183.89V286.04H153.24V255.39H71.52V286.04H40.87V255.39H35.76C16.04 255.39 0 239.35 0 219.64V143.02H30.65V219.64C30.65 222.46 32.94 224.75 35.76 224.75H189C191.82 224.75 194.11 222.46 194.11 219.64V143.02H224.75Z" fill="#A528FF"/>
+<path d="M173.67 173.55H51.08V173.64H173.67V173.55Z" fill="#1A1A1A"/>
+<path d="M183.89 173.55V61.29C183.89 50.01 174.74 40.86 163.46 40.86H153.24V20.43C153.24 9.14 144.1 0 132.81 0H91.95C80.66 0 71.52 9.14 71.52 20.43V40.86H61.3C50.02 40.86 40.87 50.01 40.87 61.29V173.55H30.65V183.77H194.11V173.55H183.89ZM81.73 20.43C81.73 14.8 86.31 10.21 91.95 10.21H132.81C138.44 10.21 143.03 14.8 143.03 20.43V40.86H81.73V20.43ZM173.67 173.64H51.08V61.29C51.08 55.66 55.67 51.08 61.3 51.08H163.46C169.09 51.08 173.67 55.66 173.67 61.29V173.64Z" fill="#1A1A1A"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Ônibus</div>
+          <div style="font-size:10px; color:#999;">Ônibus</div>
         </div>
-
-        <!-- Localização -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- pin espesso roxo -->
-            <path d="M14 3 C10 3 7 6 7 10 C7 15 14 25 14 25 C14 25 21 15 21 10 C21 6 18 3 14 3Z" stroke="#A528FF" stroke-width="3" stroke-linejoin="round"/>
-            <!-- círculo interno fino preto -->
-            <circle cx="14" cy="10" r="3" stroke="#1A1A1A" stroke-width="1"/>
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="39" height="64" viewBox="0 0 174 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M86.84 173.68C38.96 173.68 0 134.73 0 86.84C0 38.95 38.96 0 86.84 0C134.72 0 173.67 38.95 173.67 86.84C173.67 134.73 134.72 173.68 86.84 173.68ZM86.84 30.65C55.86 30.65 30.65 55.86 30.65 86.84C30.65 117.82 55.86 143.03 86.84 143.03C117.82 143.03 143.03 117.82 143.03 86.84C143.03 55.86 117.82 30.65 86.84 30.65Z" fill="#A528FF"/>
+<path d="M107.27 192.16V255.4C107.27 266.67 98.1 275.83 86.84 275.83C75.58 275.83 66.41 266.66 66.41 255.4V192.16C73.11 193.45 79.94 194.1 86.84 194.1C93.74 194.1 100.57 193.45 107.27 192.16ZM117.49 178.95C107.86 182.15 97.55 183.89 86.84 183.89C76.13 183.89 65.83 182.16 56.19 178.95V255.4C56.19 272.33 69.91 286.05 86.84 286.05C103.77 286.05 117.49 272.33 117.49 255.4V178.95Z" fill="#1A1A1A"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Destino</div>
+          <div style="font-size:10px; color:#999;">Destino</div>
         </div>
-
-        <!-- Calendário / Data -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- caixa espessa roxa -->
-            <rect x="3" y="6" width="22" height="19" rx="3" stroke="#A528FF" stroke-width="3"/>
-            <!-- linha topo fina preta -->
-            <line x1="3" y1="12" x2="25" y2="12" stroke="#1A1A1A" stroke-width="1"/>
-            <!-- ganchos finos pretos -->
-            <line x1="9" y1="3" x2="9" y2="9" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
-            <line x1="19" y1="3" x2="19" y2="9" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
-            <!-- pontos finos pretos -->
-            <circle cx="9" cy="16" r="1" fill="#1A1A1A"/>
-            <circle cx="14" cy="16" r="1" fill="#1A1A1A"/>
-            <circle cx="19" cy="16" r="1" fill="#1A1A1A"/>
-            <circle cx="9" cy="21" r="1" fill="#1A1A1A"/>
-            <circle cx="14" cy="21" r="1" fill="#1A1A1A"/>
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="64" height="64" viewBox="0 0 287 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M143.02 112.38C159.92 112.38 173.67 126.13 173.67 143.03C173.67 159.93 159.92 173.68 143.02 173.68C126.12 173.68 112.37 159.93 112.37 143.03C112.37 126.13 126.12 112.38 143.02 112.38ZM143.02 102.16C120.45 102.16 102.16 120.46 102.16 143.02C102.16 165.58 120.46 183.88 143.02 183.88C165.58 183.88 183.88 165.58 183.88 143.02C183.88 120.46 165.58 102.16 143.02 102.16Z" fill="#1A1A1A"/>
+<path d="M158.35 0H127.7V91.94H158.35V0Z" fill="#A528FF"/>
+<path d="M233.336 31.079L168.324 96.0904L189.997 117.763L255.008 52.7518L233.336 31.079Z" fill="#A528FF"/>
+<path d="M286.04 127.7H194.1V158.35H286.04V127.7Z" fill="#A528FF"/>
+<path d="M189.987 168.302L168.315 189.975L233.326 254.987L254.999 233.314L189.987 168.302Z" fill="#A528FF"/>
+<path d="M158.35 194.1H127.7V286.04H158.35V194.1Z" fill="#A528FF"/>
+<path d="M96.0856 168.33L31.0742 233.341L52.747 255.014L117.758 190.003L96.0856 168.33Z" fill="#A528FF"/>
+<path d="M91.94 127.7H0V158.35H91.94V127.7Z" fill="#A528FF"/>
+<path d="M52.7296 31.0594L31.0568 52.7322L96.0682 117.744L117.741 96.0708L52.7296 31.0594Z" fill="#A528FF"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Data</div>
+          <div style="font-size:10px; color:#999;">Bússola</div>
         </div>
-
-        <!-- Passagem / Ticket -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- forma ticket espessa roxa -->
-            <path d="M3 9 L3 19 C3 19 7 19 7 14 C7 9 3 9 3 9 Z" stroke="#A528FF" stroke-width="3" stroke-linejoin="round" fill="none"/>
-            <path d="M3 9 L25 9 L25 19 C25 19 21 19 21 14 C21 9 25 9 25 9 Z" stroke="#A528FF" stroke-width="3" stroke-linejoin="round" fill="none"/>
-            <!-- linhas finas pretas -->
-            <line x1="10" y1="12" x2="18" y2="12" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
-            <line x1="10" y1="16" x2="16" y2="16" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="32" height="64" viewBox="0 0 144 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M130.17 61.3H12.86C5.75999 61.3 0 67.06 0 74.15V242.55C0 249.65 5.75999 255.4 12.86 255.4H130.17C137.27 255.4 143.03 249.65 143.03 242.55V74.15C143.03 67.06 137.27 61.3 130.17 61.3ZM30.65 245.19H12.86C11.4 245.19 10.22 244 10.22 242.55V74.15C10.22 72.7 11.4 71.52 12.86 71.52H30.65V245.19ZM66.41 245.19H40.87V71.52H66.41V245.19ZM76.62 245.19V71.52H102.16V245.19H76.62ZM132.81 242.55C132.81 244 131.63 245.19 130.17 245.19H112.38V71.52H130.17C131.63 71.52 132.81 72.7 132.81 74.15V242.55Z" fill="#1A1A1A"/>
+<path d="M112.38 51.08H81.73V30.65H61.3V51.08H30.65V26.19C30.65 11.75 42.4 0 56.84 0H86.1901C100.63 0 112.38 11.75 112.38 26.19V51.08Z" fill="#A528FF"/>
+<path d="M40.87 255.4H10.22V286.05H40.87V255.4Z" fill="#A528FF"/>
+<path d="M132.81 255.4H102.16V286.05H132.81V255.4Z" fill="#A528FF"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Passagem</div>
+          <div style="font-size:10px; color:#999;">Poltrona</div>
         </div>
-
-        <!-- Busca / Lupa (conceito olhar) -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- círculo espesso roxo -->
-            <circle cx="12" cy="12" r="7" stroke="#A528FF" stroke-width="3"/>
-            <!-- cabo fino preto -->
-            <line x1="17.5" y1="17.5" x2="24" y2="24" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
-            <!-- ponto central fino -->
-            <circle cx="12" cy="12" r="2" stroke="#1A1A1A" stroke-width="1"/>
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="57" height="64" viewBox="0 0 246 276" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M81.7299 255.41H30.65V275.84H81.7299V255.41Z" fill="#A528FF"/>
+<path d="M214.54 255.41H163.46V275.84H214.54V255.41Z" fill="#A528FF"/>
+<path d="M214.54 0H30.65C13.72 0 0 13.72 0 30.65V173.67L8.03 174.34H8.07001L10.22 174.52L69.14 179.43L122.59 183.89L176.05 179.43L234.97 174.52L237.12 174.34H237.16L245.19 173.67V30.65C245.19 13.72 231.46 0 214.54 0ZM214.54 145.47L122.59 153.13L30.65 145.47V30.65H214.54V145.47Z" fill="#A528FF"/>
+<path d="M10.22 189.72L0 189V189.14L10.22 189.86L68.12 193.94V193.83L10.22 189.72Z" fill="#1A1A1A"/>
+<path d="M234.97 189.86L177.07 193.94V193.83L176.53 193.87C172.41 194.16 168.87 196.89 167.57 200.77L163.99 211.42C161.79 217.98 166.71 224.76 173.68 224.76H234.97V234.97C234.97 240.61 230.39 245.19 224.75 245.19H20.44C14.8 245.19 10.22 240.61 10.22 234.97V224.76H71.51C78.48 224.76 83.4 217.98 81.2 211.42L77.62 200.77C76.32 196.89 72.78 194.16 68.66 193.87L68.13 193.83V193.94L10.22 189.86L0 189.14V234.97C0 246.26 9.15 255.41 20.44 255.41H224.75C236.04 255.41 245.19 246.26 245.19 234.97V189.14L234.97 189.86ZM10.22 199.96L67.94 204.03L71.47 214.54H10.22V199.96ZM234.97 214.54H173.72L177.25 204.06L234.97 199.97V214.54Z" fill="#1A1A1A"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Busca</div>
+          <div style="font-size:10px; color:#999;">Vista Superior</div>
         </div>
-
-        <!-- Usuário -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- cabeça espessa roxa -->
-            <circle cx="14" cy="9" r="5" stroke="#A528FF" stroke-width="3"/>
-            <!-- corpo espesso roxo -->
-            <path d="M5 25 C5 20 9 17 14 17 C19 17 23 20 23 25" stroke="#A528FF" stroke-width="3" stroke-linecap="round"/>
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="76" height="64" viewBox="0 0 283 237" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45.97 133.682H176.66L146 164.332H45.97C20.62 164.332 0 143.702 0 118.352C0 93.0016 20.62 72.3816 45.97 72.3816H146L176.66 103.032H45.97C37.52 103.032 30.64 109.912 30.64 118.352C30.64 126.792 37.52 133.682 45.97 133.682Z" fill="#A528FF"/>
+<path d="M275.21 100.302L182.39 7.48159C177.36 2.45159 170.71 -0.198411 163.58 0.0115885C156.47 0.221589 149.96 3.26159 145.24 8.57159L131.57 23.9516C122.6 34.0416 123.05 49.4316 132.6 58.9816L146 72.3816L176.66 103.032L188.37 114.742C189.33 115.712 189.87 116.992 189.87 118.352C189.87 119.712 189.33 121.002 188.37 121.972L176.66 133.682L146 164.332L132.6 177.732C123.05 187.282 122.6 202.672 131.57 212.762L145.24 228.142C149.96 233.452 156.47 236.492 163.58 236.702C163.84 236.712 164.1 236.722 164.36 236.722C171.17 236.722 177.55 234.082 182.39 229.232L275.21 136.412C285.16 126.462 285.16 110.252 275.21 100.302ZM163.88 226.492C159.61 226.372 155.71 224.542 152.87 221.352L139.2 205.972C133.82 199.922 134.09 190.692 139.82 184.962L195.59 129.192C198.49 126.302 200.08 122.452 200.08 118.352C200.08 114.252 198.49 110.412 195.59 107.522L139.82 51.7516C134.09 46.0216 133.82 36.7916 139.2 30.7416L152.87 15.3516C155.71 12.1716 159.61 10.3416 163.88 10.2216C168.15 10.0816 172.15 11.6816 175.16 14.7016L267.98 107.522C273.96 113.492 273.96 123.222 267.98 129.192L175.16 222.012C172.15 225.032 168.14 226.632 163.88 226.492Z" fill="#1A1A1A"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Usuário</div>
+          <div style="font-size:10px; color:#999;">Direção</div>
         </div>
-
-        <!-- Assento / Poltrona -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- encosto espesso roxo -->
-            <rect x="7" y="4" width="14" height="14" rx="3" stroke="#A528FF" stroke-width="3"/>
-            <!-- assento espesso roxo -->
-            <path d="M5 18 L5 22 C5 23 6 24 7 24 L21 24 C22 24 23 23 23 22 L23 18" stroke="#A528FF" stroke-width="3" stroke-linecap="round"/>
-            <!-- pernas finas pretas -->
-            <line x1="8" y1="24" x2="8" y2="27" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
-            <line x1="20" y1="24" x2="20" y2="27" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/>
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="41" height="64" viewBox="0 0 184 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M147.41 286.04H36.4701C16.3601 286.04 0 269.68 0 249.57V36.47C0 16.36 16.3601 0 36.4701 0H147.41C167.52 0 183.88 16.36 183.88 36.47V249.57C183.88 269.68 167.52 286.04 147.41 286.04ZM36.4701 30.64C33.2601 30.64 30.64 33.25 30.64 36.47V249.57C30.64 252.78 33.2501 255.4 36.4701 255.4H147.41C150.62 255.4 153.23 252.79 153.23 249.57V36.47C153.23 33.26 150.62 30.64 147.41 30.64H36.4701Z" fill="#A528FF"/>
+<path d="M122.59 40.86H61.29V51.08H122.59V40.86Z" fill="#1A1A1A"/>
+<path d="M91.9401 245.18C80.6701 245.18 71.51 236.01 71.51 224.75C71.51 213.49 80.6801 204.32 91.9401 204.32C103.2 204.32 112.37 213.49 112.37 224.75C112.37 236.01 103.2 245.18 91.9401 245.18ZM91.9401 214.54C86.3101 214.54 81.7301 219.12 81.7301 224.75C81.7301 230.38 86.3101 234.96 91.9401 234.96C97.5701 234.96 102.15 230.38 102.15 224.75C102.15 219.12 97.5701 214.54 91.9401 214.54Z" fill="#1A1A1A"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Poltrona</div>
+          <div style="font-size:10px; color:#999;">Mobile</div>
         </div>
-
-        <!-- Rota / Trajeto -->
-        <div style="text-align:center;">
-          <svg width="56" height="56" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- linha de rota espessa roxa -->
-            <path d="M7 5 C7 5 7 14 14 14 C21 14 21 23 21 23" stroke="#A528FF" stroke-width="3" stroke-linecap="round"/>
-            <!-- ponto origem fino preto -->
-            <circle cx="7" cy="5" r="2.5" stroke="#1A1A1A" stroke-width="1" fill="white"/>
-            <!-- ponto destino fino preto -->
-            <circle cx="21" cy="23" r="2.5" stroke="#1A1A1A" stroke-width="1" fill="white"/>
+        <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <svg width="48" height="64" viewBox="0 0 237 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M147.41 313.53H36.47C16.36 313.53 0 297.17 0 277.06V63.96C0 43.85 16.36 27.49 36.47 27.49H97.26V58.1399H36.47C33.26 58.1399 30.65 60.75 30.65 63.97V277.07C30.65 280.28 33.26 282.89 36.47 282.89H147.41C150.62 282.89 153.24 280.28 153.24 277.07V169.67H183.89V277.07C183.89 297.18 167.53 313.54 147.42 313.54L147.41 313.53Z" fill="#A528FF"/>
+<path d="M184.42 52.59C173.67 41.9 168.44 24.7 168.44 0H158.22C158.22 48.55 138.42 68.36 89.87 68.36H76.61V78.5699H89.87C138.42 78.5699 158.22 98.3799 158.22 146.93H168.44C168.44 98.3799 188.24 78.5699 236.8 78.5699V68.36C212.23 68.36 195.1 63.2 184.42 52.59ZM177.21 87.34C171.08 93.47 166.47 101.14 163.32 110.47C160.17 101.14 155.54 93.47 149.4 87.34C143.29 81.25 135.67 76.65 126.41 73.5C144.99 67.28 157.08 55.2099 163.33 36.6499C169.58 55.1999 181.66 67.27 200.23 73.49C190.94 76.64 183.31 81.24 177.21 87.34Z" fill="#1A1A1A"/>
+<path d="M91.94 272.67C80.67 272.67 71.51 263.5 71.51 252.24C71.51 240.98 80.68 231.81 91.94 231.81C103.2 231.81 112.37 240.98 112.37 252.24C112.37 263.5 103.2 272.67 91.94 272.67ZM91.94 242.03C86.31 242.03 81.73 246.61 81.73 252.24C81.73 257.87 86.31 262.45 91.94 262.45C97.57 262.45 102.15 257.87 102.15 252.24C102.15 246.61 97.57 242.03 91.94 242.03Z" fill="#1A1A1A"/>
           </svg>
-          <div style="font-size:10px; color:#999; margin-top:8px;">Rota</div>
+          <div style="font-size:10px; color:#999;">ClickBus AI</div>
         </div>
-
       </div>
-    </div>
+    </div>    </div>
 
     <div class="icon-rules">
       <div class="rule-card">
-        <h4>Construção — Grid 28×28</h4>
+        <h4>Construção — Estilo Filled</h4>
         <ul>
-          <li>Traços espessos: <strong>3 módulos → stroke #A528FF</strong> (ou qualquer cor da paleta)</li>
-          <li>Traços finos: <strong>1 módulo → stroke #1A1A1A</strong> (ou branco sobre fundo escuro)</li>
-          <li>Máximo <strong>1 cor</strong> da paleta por ícone</li>
-          <li>Estilo outline — nunca filled</li>
-          <li>Simplificar ao essencial — sem detalhes extras</li>
+          <li>Ícones <strong>filled (preenchidos)</strong> — nunca outline</li>
+          <li>Cor principal: <strong>#A528FF</strong> (roxo ClickBus)</li>
+          <li>Cor de suporte: <strong>#1A1A1A</strong> (preto para detalhes estruturais)</li>
+          <li>Máximo <strong>2 cores</strong> por ícone (roxo + preto)</li>
+          <li>Formas orgânicas e curvilíneas, alinhadas ao símbolo da marca</li>
         </ul>
       </div>
       <div class="rule-card dont">
         <h4 style="color:#FF5A4B;">✗ Não pode</h4>
         <ul>
           <li>Gradientes ou efeitos gráficos</li>
-          <li>Mais de 1 cor da paleta no mesmo ícone</li>
-          <li>Estilo preenchido (filled)</li>
-          <li>Detalhes excessivos fora do grid</li>
-          <li>Usar junto com padronagens poluídas</li>
+          <li>Estilo outline (stroke sem preenchimento)</li>
+          <li>Cores fora da paleta oficial</li>
+          <li>Misturar com ícones de bibliotecas externas não aprovadas</li>
+          <li>Usar sem respeitar a proporção e espaçamento originais</li>
         </ul>
       </div>
     </div>
